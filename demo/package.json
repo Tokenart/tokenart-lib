@@ -1,0 +1,17 @@
+{
+  "name": "tokenart-example-commonjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node src/test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tokenart": "file:.."
+  },
+  "devDependencies": {
+    "serve": "^13.0.2"
+  }
+}

@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #icons > * {
+            border: solid 1px black;
+        }
+    </style>
+</head>
+<body>
+    <div>License: <span id="license"></span></div>
+    <div>Link: <a id="link"></a></div>
+    <div>Warning: <span id="warning" style="color: red;"></span></div>
+    <div>Icons: <div id="icons"></div></div>
+
+    <script src="node_modules/tokenart/dist/umd.js"></script>
+    <script>
+        console.log('TokenArt', TokenArt)
+        TokenArt.initialize({CLIENT_RPC_ENDPOINT: 'https://eth-rinkeby.alchemyapi.io/v2/xkDRPhp2kMajTxIsx38G6F7WA-AeKehL', TOKENART_CONTRACT_ADDRESS: '0x2187af7DB27787834e7E3c47b8BA38E0E8a78463'})
+        const license = TokenArt.getLicense('0x06012c8cf97BEaD5deAe237070F9587f8E7A266d', 0, 'ERC721')
+
+        license.then(license => {
+            console.log('Licenses:', license)
+
+            const licenseDiv = document.getElementById('license')
+            const linkDiv = document.getElementById('link')
+            const warningDiv = document.getElementById('warning')
+            const iconsDiv = document.getElementById('icons')
+
+            licenseDiv.innerText = license.license
+            linkDiv.a = linkDiv.innerText = license.link
+            warningDiv.innerText = license.warning
+
+            for (const icon of license.icons) {
+                const div = document.createElement('div')
+                div.innerHTML = `
+                    ${icon.tag ? `<div>Tag: ${icon.tag}</div>` : ''}
+                    <div>Name: ${icon.name}</div>
+                    <div>Description: ${icon.description}</div>
+                    <div style="background: grey;">${icon.element()}</div>
+                `
+                iconsDiv.append(div)
+            }
+        })
+    </script>
+</body>
+</html>
