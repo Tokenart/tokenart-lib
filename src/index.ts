@@ -2,7 +2,6 @@ import { fetchContractLicense, fetchTokenLicense } from "./EthereumApi"
 import { loadTezosLicenses, fetchTezosContractLicense, fetchTezosTokenLicense } from "./TezosApi"
 import { getIcons } from './icons'
 import config from './config'
-// import ReactDOM from 'react'
 
 export function initialize(_config: { CLIENT_RPC_ENDPOINT: string }) {
     for (const key in _config) {
@@ -48,17 +47,5 @@ export async function getLicense(address: string, tokenId: string, tokenStandard
 
     let { icons, warning } = getIcons(license, await tokenStandard)
 
-    // if (global.document) {
-    //     icons.forEach(icon => {
-    //         const divElement = document.createElement('div')
-    //         icon.domElement = ReactDOM.render(divElement, icon.element)
-    //     })
-    // }
-
     return { license, link, warning, icons }
 }
-
-// export default {
-//     initialize,
-//     getLicense,
-// }

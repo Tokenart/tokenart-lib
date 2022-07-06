@@ -1,11 +1,16 @@
 {
   "name": "tokenart",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
-  "main": "dist/cjs.js",
-  "browser": "dist/umd.js",
+  "main": "dist/commonjs.js",
+  "browser": "dist/browser.js",
+  "typescript": {
+    "definition": "dist/tokenart.d.ts"
+  },
   "scripts": {
-    "build": "webpack"
+    "build": "rm -rf dist; webpack; npm run emitDeclaration",
+    "watch": "rm -rf dist; webpack --watch",
+    "emitDeclaration": "tsc src/index.ts --declaration --emitDeclarationOnly -module system -out dist/tokenart.js --moduleResolution node --jsx react-jsx"
   },
   "repository": {
     "type": "git",
@@ -23,6 +28,12 @@
   },
   "homepage": "https://github.com/Tokenart/tokenart-lib#readme",
   "devDependencies": {
+    "@types/eslint": "^8.4.5",
+    "esbuild": "0.12",
+    "esbuild-loader": "^2.19.0",
+    "esbuild-plugin-d.ts": "^1.1.0",
+    "esbuild-plugin-node-polyfills": "^1.0.2",
+    "node-polyfill-webpack-plugin": "^2.0.0",
     "ts-loader": "^9.3.1",
     "typescript": "^4.7.4",
     "webpack": "^5.73.0",
@@ -30,7 +41,6 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "node-polyfill-webpack-plugin": "^2.0.0",
     "web3-eth-abi": "^1.7.4"
   }
 }

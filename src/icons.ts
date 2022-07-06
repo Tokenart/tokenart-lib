@@ -136,31 +136,29 @@ export function getIcons(license: string, tokenStandard?: 'ERC721'|'ERC1155') {
      })), warning }
 }
 
-export function getIconElement(icon: Icon) {
-    return () => {
-        const props = `style="width: 50px; height: 50px; margin-right: 4px;"`
+export function getIconElement(icon: Icon): string {
+    const props = `style="width: 50px; height: 50px; margin-right: 4px;"`
 
-        if (icon.name === 'ERC721')
-            return ERC721Icon({color: 'light', props})
-        if (icon.name === 'ERC1155')
-            return ERC1155Icon({color: 'light', props})
-        if (icon.name === 'No License')
-            return NoLicenseIcon({color: 'dark', props})
-        if (icon.name === 'CC0')
-            return PublicDomainIcon({color: 'dark', props})
-        if (icon.name === 'CCBY')
-            return AttributionIcon({color: 'dark', props})
-        if (icon.name === 'CCBYSA')
-            return ShareAlikeIcon({color: 'dark', props})
+    if (icon.name === 'ERC721')
+        return ERC721Icon({color: 'light', props})
+    if (icon.name === 'ERC1155')
+        return ERC1155Icon({color: 'light', props})
+    if (icon.name === 'No License')
+        return NoLicenseIcon({color: 'dark', props})
+    if (icon.name === 'CC0')
+        return PublicDomainIcon({color: 'dark', props})
+    if (icon.name === 'CCBY')
+        return AttributionIcon({color: 'dark', props})
+    if (icon.name === 'CCBYSA')
+        return ShareAlikeIcon({color: 'dark', props})
 
-        if (!(icon.tag in iconsSrc)) throw 'TokenArt.lib: Icon not found.'
+    if (!(icon.tag in iconsSrc)) throw 'TokenArt.lib: Icon not found.'
 
-        return `<div className="bg-blue-1000 rounded-full">
-            <img
-              src="https://imagedelivery.net/To-SpZbUkwzPkr4jjWBZ2A/${iconsSrc[icon.tag]}/min"
-              alt="${icon.name}"
-              ${props}
-            />
-        </div>`
-    }
+    return `<div className="bg-blue-1000 rounded-full">
+        <img
+          src="https://imagedelivery.net/To-SpZbUkwzPkr4jjWBZ2A/${iconsSrc[icon.tag]}/min"
+          alt="${icon.name}"
+          ${props}
+        />
+    </div>`
 }

@@ -11,7 +11,6 @@ module.exports = [
         {
           test: /\.tsx?$/,
           use: 'ts-loader',
-          exclude: /node_modules/,
         },
       ],
     },
@@ -23,12 +22,12 @@ module.exports = [
     ],
     output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: 'umd.js',
+      filename: 'browser.js',
       library: {
         name: 'TokenArt',
         type: 'umd'
       }
-    }
+    },
   },
   {
     target: 'node',
@@ -39,7 +38,6 @@ module.exports = [
         {
           test: /\.tsx?$/,
           use: 'ts-loader',
-          exclude: /node_modules/,
         },
       ],
     },
@@ -48,10 +46,10 @@ module.exports = [
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: 'cjs.js',
+      filename: 'commonjs.js',
       library: {
         type: 'commonjs'
-      }
+      },
     },
-  }
+  },
 ]

@@ -15,7 +15,7 @@
     <div>Warning: <span id="warning" style="color: red;"></span></div>
     <div>Icons: <div id="icons"></div></div>
 
-    <script src="node_modules/tokenart/dist/umd.js"></script>
+    <script src="node_modules/tokenart/dist/browser.js"></script>
     <script>
         console.log('TokenArt', TokenArt)
         TokenArt.initialize({CLIENT_RPC_ENDPOINT: 'https://eth-rinkeby.alchemyapi.io/v2/xkDRPhp2kMajTxIsx38G6F7WA-AeKehL', TOKENART_CONTRACT_ADDRESS: '0x2187af7DB27787834e7E3c47b8BA38E0E8a78463'})
@@ -39,7 +39,7 @@
                     ${icon.tag ? `<div>Tag: ${icon.tag}</div>` : ''}
                     <div>Name: ${icon.name}</div>
                     <div>Description: ${icon.description}</div>
-                    <div style="background: grey;">${icon.element()}</div>
+                    <div style="background: grey;">${icon.element}</div>
                 `
                 iconsDiv.append(div)
             }
