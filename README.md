@@ -1,8 +1,8 @@
 # tokenart-lib
 
-## Build: `npm run build`
+### How to test:
 
-## Test: see instructions in `demo`
+Run `npm run build`, then see instructions in `demo`.
 
 ## Prerequisite: Create an Infura RPC Endpoint
 
@@ -11,7 +11,7 @@
 ## How to use in browser:
 
 1. Install: `npm i tokenart`
-Import the file <script src="node_modules/tokenart/dist/browser.js"></script>
+Import the file `<script src="node_modules/tokenart/dist/browser.js"></script>`.
 
 Alternatively, download the file `dist/browser.js` in your dependency folder.
 
