@@ -137,7 +137,7 @@ export function getIcons(license: string, tokenStandard?: 'ERC721'|'ERC1155') {
 }
 
 export function getIconElement(icon: Icon): string {
-    const props = `style="width: 50px; height: 50px; margin-right: 4px;"`
+    const props = `style="width: 50px; height: 50px;"`
 
     if (icon.name === 'ERC721')
         return ERC721Icon({color: 'light', props})
@@ -154,7 +154,7 @@ export function getIconElement(icon: Icon): string {
 
     if (!(icon.tag in iconsSrc)) throw 'TokenArt.lib: Icon not found.'
 
-    return `<div className="bg-blue-1000 rounded-full">
+    return `<div style="background-color: rgb(11 22 60); border-radius: 50%; display: inline-block;">
         <img
           src="https://imagedelivery.net/To-SpZbUkwzPkr4jjWBZ2A/${iconsSrc[icon.tag]}/min"
           alt="${icon.name}"

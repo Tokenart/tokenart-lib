@@ -1,5 +1,5 @@
 const TokenArt = require('tokenart')
 console.log(TokenArt)
 
-TokenArt.initialize({CLIENT_RPC_ENDPOINT: 'https://polygon-mainnet.infura.io/v3/daa21114d62c4a55bb148bc51d4cdb55'})
-TokenArt.getLicense('0x06012c8cf97bead5deae237070f9587f8e7a266d', '2012947', 'ERC721').then(l => console.log('License:', l))
+TokenArt.initialize({CLIENT_RPC_ENDPOINT: 'https://eth-rinkeby.alchemyapi.io/v2/xkDRPhp2kMajTxIsx38G6F7WA-AeKehL', TOKENART_CONTRACT_ADDRESS: '0x2187af7DB27787834e7E3c47b8BA38E0E8a78463'})
+TokenArt.getLicense('0x06012c8cf97BEaD5deAe237070F9587f8E7A266d', 0, 'ERC721').then(l => console.log('License:', l))
