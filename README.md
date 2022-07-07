@@ -20,7 +20,7 @@ You can use the Infura provider ([see the tutorial](https://blog.infura.io/post/
 Be carefull: The RPC endpoint is going to be called from client side.
 Make sure to generate a secure, restricted endpoint!
 
-*How to secure my Infura endpoint?*
+**How to secure my Infura endpoint?**
 
 1. Go to https://infura.io/dashboard . Create a new project. Select 'Product: Ethereum'. Give it a special name, eg. 'TokenArt Polygon Secured Client'.
 
@@ -44,7 +44,7 @@ Follow the prerequite instructions to have a RPC endpoint on the Polygon network
 Be carefull: CLIENT_RPC_ENDPOINT is going to be called from client side, make sure to generate a restricted endpoint.
 
 3. Call `TokenArt.getLicense(address, tokenId, tokenStandard)` to retrieve the license of a token!
-Check the *API* section below for more detail on how to use the methods.
+Check the **API** section below for more detail on how to use the methods.
 
 ## How to use in a React app:
 
@@ -93,7 +93,7 @@ return (
 )
 ```
 
-Check the *API* section below for more detail on how to use the methods.
+Check the **API** section below for more detail on how to use the methods.
 
 ## How to use in a Node script:
 
@@ -113,7 +113,7 @@ TokenArt.initialize({CLIENT_RPC_ENDPOINT})
 const license = await TokenArt.getLicense(address, tokenId, tokenStandard)
 ```
 
-Check the *API* section below for more detail on how to use the methods.
+Check the **API** section below for more detail on how to use the methods.
 
 ## API
 
@@ -127,20 +127,20 @@ function initialize(config: {
 }): void
 ```
 
-*What it does*
+**What it does**
 
 1. It saves the configuration for later use.
 
 2. It loads initial data from Tezos, using the https://tzstats.com/ service.
 
-*How to use*
+**How to use**
 
 Call this method once at page start, before calling getLicense.
 
 You don't need to wait for it, that's why it doesn't return any promise!
 You can do your own jobs, call `getLicense`, ... `getLicense` will wait automatically for Tezos to be initialized if needed.
 
-*Advanced usage*
+**Advanced usage**
 
 It is possible to provide more configuration if you need to talk to non-official TokenArt registries:
 
@@ -172,7 +172,7 @@ function getLicense(address: string, tokenId: string, tokenStandard?: Promise<'E
 }>
 ```
 
-*What is does*
+**What is does**
 
 1. It looks for the network the NFT belongs to (Ethereum, Polygon or Tezos).
 
@@ -180,7 +180,7 @@ function getLicense(address: string, tokenId: string, tokenStandard?: Promise<'E
 
 3. It computes icons for that license, waiting for the tokenStandard to be available if needed.
 
-*How to use*
+**How to use**
 
 Call this method once per token. Example for a CryptoKitty:
 ```js
@@ -198,7 +198,7 @@ Returns:
 
 Loop over the icons to display to your users, with a tooltip!
 
-*Advanced usage*
+**Advanced usage**
 
 `tokenStandard` can be omitted if you don't want the icon.
 
