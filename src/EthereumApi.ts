@@ -1,14 +1,7 @@
 // Alchemy is the library used to talk to the on-chain TokenArt registry
 import axios from 'axios';
-import * as abiLib from 'web3-eth-abi';
+import abiLib from 'web3-eth-abi';
 import config from './config';
-
-declare module "web3-eth-abi" {
-    const {encodeFunctionCall, decodeParameters};
-}
-declare module "axios" {
-    const {create};
-}
 
 export async function fetchContractLicense(address: string) {
     const funcCall: any = {"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"contractLicenses","outputs":[{"internalType":"uint256","name":"licenseId","type":"uint256"},{"internalType":"uint256","name":"version","type":"uint256"}],"stateMutability":"view","type":"function"};
