@@ -11,12 +11,6 @@ declare module "config" {
     export default _default;
 }
 declare module "EthereumApi" {
-    module "web3-eth-abi" {
-        const encodeFunctionCall: any, decodeParameters: any;
-    }
-    module "axios" {
-        const create: any;
-    }
     export function fetchContractLicense(address: string): Promise<{
         license: string;
         link: string;
