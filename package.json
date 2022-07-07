@@ -1,6 +1,6 @@
 {
   "name": "tokenart",
-  "version": "0.0.3",
+  "version": "0.0.11",
   "description": "",
   "main": "dist/commonjs.js",
   "browser": "dist/browser.js",
@@ -10,7 +10,8 @@
   "scripts": {
     "build": "rm -rf dist; webpack; npm run emitDeclaration",
     "watch": "rm -rf dist; webpack --watch",
-    "emitDeclaration": "tsc src/index.ts --declaration --emitDeclarationOnly -module system -out dist/tokenart.js --moduleResolution node --jsx react-jsx"
+    "emitDeclaration": "tsc src/index.ts --declaration --emitDeclarationOnly -module system -out dist/tokenart.js --moduleResolution node --jsx react-jsx",
+    "prepublishOnly": "node increment-version.js; npm run build; git commit -am \"Publish new npm version\""
   },
   "repository": {
     "type": "git",
