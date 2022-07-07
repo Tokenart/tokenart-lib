@@ -1,6 +1,6 @@
 {
   "name": "tokenart",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "",
   "main": "dist/commonjs.js",
   "browser": "dist/browser.js",
